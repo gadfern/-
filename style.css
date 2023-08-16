@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Playfair Display,"Arial;
+}
+
+body{
+    background-image: url(https://www.rei.com/dam/parrish_091412_0679_main_lg.jpg);
+    color: whitesmoke;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.5);
+} 
+
+.header {
+    text-align: center;
+    padding: 20px; /* gives a bit of space around */
+}
+
+.header h2 {
+    font-size: 3em; /* size it up */
+    font-weight: bold; /* make it bold */
+    margin-bottom: 10px; /* space between title and line */
+    color: whitesmoke; /* for better visibility, considering your background */
+}
+
+.header .line {
+    width: 250px;
+    height: 4px;
+    background: black;
+    margin: 10px auto 20px; /* space above and below line */
+    border-radius: 10px;
+}
+
+.header h1 {
+    font-size: 2em; /* size it up a bit, but smaller than the title */
+    margin-top: 10px; /* some space between line and subtitle */
+    color: whitesmoke; /* making it orange for some contrast, change as needed */
+}
+
+.header h2 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* subtle shadow */
+}
+
+.header h1 {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* subtle shadow */
+}
+
+h4{
+    background-color:#FFD700;  /* Slightly darker shade for hover effect */
+    color:#FFD700;
+    border-radius: 20px;
+}
+
+.container{
+    width:98%;
+    display: grid;
+    margin: auto;
+    margin-top: 20px;
+    grid-template-columns: 250px repeat(3,1fr);
+    grid-template-rows: 85px 1fr 100px;
+    grid-template-areas:
+    "hd hd hd hd"
+    "sd  main main main" 
+    "ft ft ft ft";
+}
+
+.container .row .header{
+    width:60%;
+    margin:auto;
+    text-align: center ;
+}
+.container .row .header h1{
+    padding-top: 30px;
+    font-size:45px;
+}
+
+.container .row .header p{
+    margin-top: 15px;
+    font-size: 18px;
+    line-height: 2.0;
+}
+
+.content{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    margin: auto;
+
+}
+
+.content .card {
+    font-weight: bold; /* changed from font:bold; */
+    color: white;
+    margin: 50px 20px;
+    background-color: white;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    border-radius: 10px; /* Rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+    background-color: rgba(0, 0, 0, 0.7); /* semi-transparent black */
+}
+
+.content .card:hover {
+    transform: translateY(-10px); /* Lift the card a bit on hover */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.content .card img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px; /* Rounded corners for images */
+    transition: transform 0.3s ease; /* Smooth zoom transition on hover */
+}
+
+.content .card:hover img {
+    transform: scale(1.05); /* Slightly zoom the image on card hover */
+}
+
+.content .card h4 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.content .card p {
+    padding: 10px;
+    line-height: 1.5;
+}
+
+.nav_links{
+    list-style: none;
+    padding:20px;
+    font-size: 30px;
+}
+
+.nav_links li{
+    margin-bottom: 10px;
+    color: aliceblue;
+}
+
+.nav_links li a{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.nav_links li a:hover{
+    text-decoration: underline;
+    color: #FFD700;  /* Golden color for hover, but you can choose any */
+}
+
+a.cta button {
+    background-color: #FFD700;  /* Golden color, again can be any other color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 20px;  /* Space above the button */
+    cursor: pointer;  /* Hand cursor on hover */
+}
+
+a.cta button:hover {
+    background-color: #FFC300;  /* Slightly darker shade for hover effect */
+}
+
+.header{
+    grid-area: hd;
+}
+
+.footer{
+    grid-area: ft;
+}
+
+.sidebar{
+    grid-area: sd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7); /* semi-transparent black */
+    border-radius: 10px; /* add rounded corners */
+    width: 100%;
+    height: 100%;
+    padding: 20px 30px;
+}
+
+.content{
+    grid-area: main;
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    .container {
+        grid-template-columns: 200px repeat(2,1fr);
+    }
+
+    .content .card img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* Desktop (from 901px) */
+@media (min-width: 901px) {
+    .container {
+        grid-template-columns: 250px repeat(3,1fr);
+    }
+
+    .content .card img {
+        width: 300px;
+        height: 300px;
+    }
+}
